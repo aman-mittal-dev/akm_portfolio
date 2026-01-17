@@ -1,0 +1,307 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+/* Dark theme navbar */
+.theme-dark .navbar {
+  background: rgba(15, 23, 42, 0.95);
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.8);
+  border-bottom: 1px solid rgba(31, 41, 55, 0.9);
+}
+
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: var(--shadow);
+}
+
+.theme-dark .navbar.scrolled {
+  background: rgba(15, 23, 42, 0.98);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.nav-logo:hover {
+  transform: scale(1.05);
+}
+
+.logo-text {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+  background: var(--bg-secondary);
+}
+
+.nav-link.active {
+  color: var(--primary-color);
+  background: var(--bg-secondary);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 2px;
+  background: var(--primary-color);
+  border-radius: 2px;
+}
+
+.nav-icon {
+  font-size: 1.2rem;
+}
+
+/* Theme Toggle - Compact Sun/Moon */
+.nav-theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: 1rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.nav-theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+.theme-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.theme-sun {
+  background: radial-gradient(circle at 30% 30%, #ffffff, #fde68a 35%, #f59e0b 70%, #b45309 100%);
+  box-shadow: 0 0 15px rgba(252, 211, 77, 0.8), 0 5px 15px rgba(180, 83, 9, 0.5);
+  animation: compactSunPulse 3s ease-in-out infinite;
+}
+
+@keyframes compactSunPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 15px rgba(252, 211, 77, 0.8), 0 5px 15px rgba(180, 83, 9, 0.5);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(252, 211, 77, 1), 0 8px 20px rgba(180, 83, 9, 0.7);
+  }
+}
+
+.theme-moon {
+  background: radial-gradient(circle at 30% 30%, #f9fafb, #e5e7eb 35%, #9ca3af 70%, #4b5563 100%);
+  box-shadow: 0 0 15px rgba(148, 163, 184, 0.8), 0 5px 15px rgba(15, 23, 42, 0.8);
+  animation: compactMoonGlow 4s ease-in-out infinite;
+}
+
+@keyframes compactMoonGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(148, 163, 184, 0.8), 0 5px 15px rgba(15, 23, 42, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(148, 163, 184, 1), 0 8px 20px rgba(15, 23, 42, 1);
+  }
+}
+
+.theme-avatar:hover {
+  transform: scale(1.1);
+}
+
+/* Compact Heat Waves for Sun */
+.theme-heat-wave {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 200, 87, 0.5);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: compactHeatWave 2.5s ease-out infinite;
+  pointer-events: none;
+}
+
+.theme-heat-wave-1 {
+  width: 55px;
+  height: 55px;
+  animation-delay: 0s;
+  border-color: rgba(255, 200, 87, 0.4);
+}
+
+.theme-heat-wave-2 {
+  width: 65px;
+  height: 65px;
+  animation-delay: 0.3s;
+  border-color: rgba(255, 180, 67, 0.3);
+}
+
+@keyframes compactHeatWave {
+  0% {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* Compact Fog for Moon */
+.theme-fog {
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(200, 200, 220, 0.12) 0%, rgba(150, 150, 180, 0.08) 50%, transparent 70%);
+  filter: blur(8px);
+  animation: compactFogDrift 5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.theme-fog-1 {
+  width: 60px;
+  height: 60px;
+  animation-delay: 0s;
+}
+
+.theme-fog-2 {
+  width: 70px;
+  height: 70px;
+  animation-delay: 1s;
+}
+
+@keyframes compactFogDrift {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    opacity: 0.5;
+  }
+  25% {
+    transform: translate(-52%, -48%) scale(1.05) rotate(5deg);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(-48%, -52%) scale(1.1) rotate(-5deg);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translate(-51%, -49%) scale(1.05) rotate(3deg);
+    opacity: 0.55;
+  }
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    flex-direction: column;
+    background: white;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    padding: 2rem 0;
+    gap: 0;
+  }
+
+  .theme-dark .nav-menu {
+    background: #020617;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.7);
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-link {
+    width: 100%;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .nav-theme-toggle {
+    margin-left: 0;
+    margin-top: 1rem;
+    justify-self: center;
+  }
+}
+
+
+
+
+
+
+
+
