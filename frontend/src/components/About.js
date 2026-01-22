@@ -4,7 +4,8 @@ import { FiMapPin, FiMail, FiCode, FiAward, FiX } from 'react-icons/fi';
 import axios from 'axios';
 import './About.css';
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+// const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+const API_URL = process.env.REACT_APP_API_URL || "";
 
 const About = ({ about }) => {
   const skills = about?.skills || [];
