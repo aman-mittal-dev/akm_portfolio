@@ -35,7 +35,7 @@ const Navbar = ({ isDark, setIsDark }) => {
     >
       <div className="nav-container">
         <Link to="/" className="nav-logo">
-          <span className="logo-text">Portfolio</span>
+          <span className="logo-text">AKM Software Solutions</span>
         </Link>
         
         <div className={`nav-menu ${isOpen ? 'active' : ''}`}>
