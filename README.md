@@ -95,7 +95,7 @@ PORT=5000
 JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
 NODE_ENV=development
 FRONTEND_URL=http://localhost:3000
-ADMIN_USERNAME=admin
+ADMIN_USERNAME=aman.mittal.backend@gmail.com
 ADMIN_PASSWORD=Aman_Backend@123
 ```
 
