@@ -35,13 +35,13 @@ router.post('/login', [
         isValidPassword = await bcrypt.compare(password, envPassword);
       } else {
         // Plain password check (default for development)
-        isValidPassword = password === (envPassword || 'Aman_Backend@123');
+        isValidPassword = password === (envPassword);
       }
 
       if (isValidPassword) {
         const token = jwt.sign(
           { username: username, role: 'admin' },
-          process.env.JWT_SECRET || 'your-secret-key',
+          process.env.JWT_SECRET,
           { expiresIn: '24h' }
         );
 
@@ -69,7 +69,7 @@ router.get('/verify', (req, res) => {
   }
 
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'your-secret-key');
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
     res.json({ valid: true, user: decoded });
   } catch (error) {
     res.status(401).json({ message: 'Invalid token' });
