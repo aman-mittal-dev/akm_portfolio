@@ -20,7 +20,7 @@ JWT_SECRET=your-secret-key-here
 NODE_ENV=development
 FRONTEND_URL=http://localhost:3000
 ADMIN_USERNAME=admin
-ADMIN_PASSWORD=admin123
+ADMIN_PASSWORD=Aman_Backend@123
 ```
 
 Start backend:
@@ -44,7 +44,7 @@ npm start
 - **Portfolio**: http://localhost:3000
 - **Admin Panel**: http://localhost:3000/admin
   - Username: `admin`
-  - Password: `admin123`
+  - Password: `Aman_Backend@123`
 
 ## Next Steps
 

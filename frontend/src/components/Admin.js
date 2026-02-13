@@ -8,6 +8,7 @@ import './Admin.css';
 
 // const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
 const API_URL = process.env.REACT_APP_API_URL || "";
+// const API_URL = "http://localhost:5000/api";
 
 const Admin = ({ portfolioData, onUpdate }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -526,7 +527,7 @@ const Admin = ({ portfolioData, onUpdate }) => {
             <button type="submit" disabled={loading} className="login-btn">
               {loading ? 'Logging in...' : 'Login'}
             </button>
-            <p className="login-hint">Default: username: admin, password: admin123</p>
+            <p className="login-hint">Admin panel is for authorized users only.</p>
           </form>
         </motion.div>
       </div>

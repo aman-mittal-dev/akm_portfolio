@@ -73,7 +73,7 @@ Main Website:
 Admin Panel (Content Edit Karne Ke Liye):
   http://localhost:3000/admin
   - Username: admin
-  - Password: admin123
+  - Password: Aman_Backend@123
 
 
 ================================================================================

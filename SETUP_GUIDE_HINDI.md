@@ -59,7 +59,7 @@ JWT_SECRET=my-super-secret-key-12345
 NODE_ENV=development
 FRONTEND_URL=http://localhost:3000
 ADMIN_USERNAME=admin
-ADMIN_PASSWORD=admin123
+ADMIN_PASSWORD=Aman_Backend@123
 ```
 
 #### 1.4 Backend Server Start Karein
@@ -113,7 +113,7 @@ npm start
 - Browser mein jao: **http://localhost:3000/admin**
 - Login karein:
   - **Username**: `admin`
-  - **Password**: `admin123`
+  - **Password**: `Aman_Backend@123`
 
 ---
 

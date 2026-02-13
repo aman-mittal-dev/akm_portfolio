@@ -108,13 +108,13 @@ const About = ({ about }) => {
 
   // Handle Email card click - open email client
   const handleEmailClick = () => {
-    const email = about?.email || 'your.email@example.com';
+    const email = about?.email || 'aman.mittal.backend@gmail.com';
     window.location.href = `mailto:${email}`;
   };
 
   // Handle Role card click - search definition on Google
   const handleRoleClick = () => {
-    const role = about?.title || 'Full Stack Developer';
+    const role = about?.title || 'Python Developer';
     const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(role + ' definition')}`;
     window.open(searchUrl, '_blank');
   };
@@ -174,7 +174,7 @@ const About = ({ about }) => {
               <FiMail className="info-icon" />
               <div>
                 <h3>Email</h3>
-                <p>{about?.email || 'your.email@example.com'}</p>
+                <p>{about?.email || 'aman.mittal.backend@gmail.com'}</p>
               </div>
             </div>
             <div 
@@ -188,7 +188,7 @@ const About = ({ about }) => {
               <FiCode className="info-icon" />
               <div>
                 <h3>Role</h3>
-                <p>{about?.title || 'Full Stack Developer'}</p>
+                <p>{about?.title || 'Python Developer'}</p>
               </div>
             </div>
             <div 

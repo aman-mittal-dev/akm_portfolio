@@ -59,8 +59,8 @@ const Contact = ({ about }) => {
             <div className="contact-card">
               <FiMail className="contact-icon" />
               <h3>Email</h3>
-              <a href={`mailto:${about?.email || 'your.email@example.com'}`}>
-                {about?.email || 'your.email@example.com'}
+              <a href={`mailto:${about?.email || 'aman.mittal.backend@gmail.com'}`}>
+                {about?.email || 'aman.mittal.backend@gmail.com'}
               </a>
             </div>
             <div className="contact-card">
@@ -92,7 +92,7 @@ const Contact = ({ about }) => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                placeholder="Your Name"
+                placeholder="Aman Kumar Mittal"
               />
             </div>
             <div className="form-group">
@@ -104,7 +104,7 @@ const Contact = ({ about }) => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                placeholder="your.email@example.com"
+                placeholder="aman.mittal.backend@gmail.com"
               />
             </div>
             <div className="form-group">

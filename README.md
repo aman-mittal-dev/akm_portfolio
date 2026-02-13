@@ -96,7 +96,7 @@ JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
 NODE_ENV=development
 FRONTEND_URL=http://localhost:3000
 ADMIN_USERNAME=admin
-ADMIN_PASSWORD=admin123
+ADMIN_PASSWORD=Aman_Backend@123
 ```
 
 5. Start the backend server:
@@ -150,7 +150,7 @@ The frontend will run on `http://localhost:3000`
 1. Navigate to `http://localhost:3000/admin`
 2. Login with default credentials:
    - **Username**: `admin`
-   - **Password**: `admin123`
+   - **Password**: `Aman_Backend@123`
 
 ⚠️ **Important**: Change these credentials in production!
 
@@ -163,7 +163,7 @@ The frontend will run on `http://localhost:3000`
 ## Default Admin Credentials
 
 - **Username**: `admin`
-- **Password**: `admin123`
+- **Password**: `Aman_Backend@123`
 
 **Change these immediately in production!**
 

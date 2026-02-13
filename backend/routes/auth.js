@@ -6,8 +6,8 @@ const { body, validationResult } = require('express-validator');
 
 // Simple in-memory admin (In production, use a database)
 const ADMIN_USER = {
-  username: process.env.ADMIN_USERNAME || 'admin',
-  password: process.env.ADMIN_PASSWORD || '$2a$10$rOzJqJqQJqQJqQJqQJqQJO' // Default: 'admin123'
+  username: process.env.ADMIN_USERNAME || 'aman.mittal.backend@gmail.com',
+  password: process.env.ADMIN_PASSWORD || 'Aman_Backend@123' // Default: 'Aman_Backend@123'
 };
 
 // Login endpoint
@@ -35,7 +35,7 @@ router.post('/login', [
         isValidPassword = await bcrypt.compare(password, envPassword);
       } else {
         // Plain password check (default for development)
-        isValidPassword = password === (envPassword || 'admin123');
+        isValidPassword = password === (envPassword || 'Aman_Backend@123');
       }
 
       if (isValidPassword) {

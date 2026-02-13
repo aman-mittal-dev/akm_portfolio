@@ -34,10 +34,10 @@ async function readPortfolioData() {
     // Return default structure if file doesn't exist
     return {
       about: {
-        name: "Your Name",
-        title: "Full Stack Developer",
+        name: "Aman Kumar Mittal",
+        title: "Python Developer",
         description: "Passionate developer with expertise in web technologies",
-        email: "your.email@example.com",
+        email: "aman.mittal.backend@gmail.com",
         location: "Your Location",
         skills: ["JavaScript", "React", "Node.js", "Python"],
         socialLinks: {

@@ -149,7 +149,7 @@ const Hero = ({ about }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
           >
-            {about?.name || 'Your Name'}
+            {about?.name || 'Aman Kumar Mittal'}
           </motion.h1>
           
           <motion.h2
@@ -158,7 +158,7 @@ const Hero = ({ about }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            {about?.title || 'Full Stack Developer'}
+            {about?.title || 'Python Developer'}
           </motion.h2>
           
           <motion.p
