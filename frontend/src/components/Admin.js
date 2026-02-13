@@ -6,9 +6,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import './Admin.css';
 
-// const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
 const API_URL = process.env.REACT_APP_API_URL || "";
-// const API_URL = "http://localhost:5000/api";
 
 const Admin = ({ portfolioData, onUpdate }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
