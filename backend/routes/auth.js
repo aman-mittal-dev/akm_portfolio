@@ -7,7 +7,7 @@ const { body, validationResult } = require('express-validator');
 // Simple in-memory admin (In production, use a database)
 const ADMIN_USER = {
   username: process.env.ADMIN_USERNAME || 'aman.mittal.backend@gmail.com',
-  password: process.env.ADMIN_PASSWORD || '$2a$12$jpF/tWcN4B2rN/s3BH5KHODUKbfen1p4FNk8tx.W1liSqfzTF0Eg.' // Default: 'Aman_Backend@123'
+  password: process.env.ADMIN_PASSWORD || 'Aman_Backend@123' // Default: 'Aman_Backend@123'
 };
 
 // Login endpoint
