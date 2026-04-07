@@ -1,76 +1,77 @@
 ================================================================================
-  PORTFOLIO WEBSITE - KAISE RUN KARE (Python Developer Ke Liye)
+  PORTFOLIO WEBSITE - HOW TO RUN (For Python Developers)
 ================================================================================
 
-YEH JAVA PROJECT NAHI HAI - YEH NODE.JS (JAVASCRIPT) PROJECT HAI!
+THIS IS NOT A JAVA PROJECT - THIS IS A NODE.JS (JAVASCRIPT) PROJECT!
 
 ================================================================================
-STEP 1: NODE.JS INSTALL KAREIN (Ek Baar Hi)
+STEP 1: INSTALL NODE.JS (Only Once)
 ================================================================================
 
-Agar Node.js install nahi hai:
-  1. https://nodejs.org/ website kholo
-  2. "LTS" version download karo (left side)
-  3. Install karo (default options select karo)
-  4. Computer restart karo
-  5. Verify: Terminal mein type karo "node --version"
-     Agar version number dikhe, to successful! ✓
+If Node.js is not installed:
+  1. Open https://nodejs.org/
+  2. Download the "LTS" version (left side)
+  3. Install it (keep default options)
+  4. Restart your computer
+  5. Verify: Open terminal and type "node --version"
+     If a version number appears, it's successful! ✓
 
 ================================================================================
 STEP 2: AUTOMATIC SETUP (EASY WAY - RECOMMENDED)
 ================================================================================
 
-Windows Users:
-  1. START.bat file ko DOUBLE-CLICK karo
-  2. Sab automatic install ho jayega
-  3. Setup complete hone ke baad, neeche ke steps follow karo
+For Windows Users:
+  1. Double-click the START.bat file
+  2. Everything will be installed automatically
+  3. After setup is complete, follow the steps below
 
 ================================================================================
-STEP 3: MANUAL SETUP (Agar automatic kaam na kare)
+STEP 3: MANUAL SETUP (If automatic setup doesn’t work)
 ================================================================================
 
 TERMINAL 1 - Backend Setup:
 ---------------------------
-1. Terminal/PowerShell kholo
-2. Type karo:
+1. Open Terminal/PowerShell
+2. Type:
    cd backend
    npm install
    
-3. .env file banao:
-   - backend folder mein "env.example.txt" file kholo
-   - Copy karo sab content
-   - Nayi file banao ".env" naam se (dot se start)
-   - Content paste karo
+3. Create a .env file:
+   - Open "env.example.txt" inside backend folder
+   - Copy all content
+   - Create a new file named ".env" (starting with a dot)
+   - Paste the content
 
-4. Backend start karo:
+4. Start backend:
    npm start
    
-   Success message dikhna chahiye:
+   You should see:
    "🚀 Server running on port 5000"
    
-   ⚠️ TERMINAL KO OPEN RAKHO (server chal raha hai)
+   ⚠️ KEEP THIS TERMINAL OPEN (server is running)
 
 
-TERMINAL 2 - Frontend Setup (NAYI TERMINAL):
+TERMINAL 2 - Frontend Setup (NEW TERMINAL):
 --------------------------------------------
-1. NAYI Terminal/PowerShell kholo (pehli ko close mat karo!)
-2. Type karo:
+1. Open a NEW Terminal/PowerShell (don’t close the first one!)
+2. Type:
    cd frontend
    npm install
    npm start
    
-3. Browser automatic khul jayega http://localhost:3000 par
+3. Browser will automatically open at:
+   http://localhost:3000
 
 
 ================================================================================
-STEP 4: WEBSITE ACCESS KAREIN
+STEP 4: ACCESS THE WEBSITE
 ================================================================================
 
 Main Website:
   http://localhost:3000
-  - Yahan apna portfolio dikh raha hoga
+  - Your portfolio will be visible here
 
-Admin Panel (Content Edit Karne Ke Liye):
+Admin Panel (To edit content):
   http://localhost:3000/admin
   - Username: admin
   - Password: Aman_Backend@123
@@ -80,11 +81,11 @@ Admin Panel (Content Edit Karne Ke Liye):
 STEP 5: QUICK START (Windows Batch Files)
 ================================================================================
 
-Agar aap batch files use kar rahe ho:
-  1. START_BACKEND.bat - Backend start karega
-  2. START_FRONTEND.bat - Frontend start karega (separate window mein)
+If using batch files:
+  1. START_BACKEND.bat - Starts backend
+  2. START_FRONTEND.bat - Starts frontend (in separate window)
 
-Ya manually:
+Or manually:
   Terminal 1: cd backend && npm start
   Terminal 2: cd frontend && npm start
 
@@ -93,7 +94,7 @@ Ya manually:
 PYTHON vs NODE.JS COMPARISON (Easy Understanding)
 ================================================================================
 
-Python                        Node.js (Yeh Project)
+Python                        Node.js (This Project)
 --------                      ---------------------
 pip install package           npm install package
 python app.py                 node server.js
@@ -107,23 +108,23 @@ COMMON ERRORS & SOLUTIONS
 ================================================================================
 
 Error: "node command not found"
-  → Node.js install nahi hai
-  → https://nodejs.org/ se install karo
+  → Node.js is not installed
+  → Install it from https://nodejs.org/
 
 Error: "Port already in use"
-  → Port 5000 ya 3000 already use ho rahi hai
-  → .env file mein PORT=5001 karo (backend ke liye)
-  → Frontend: Terminal mein set PORT=3001 karo
+  → Port 5000 or 3000 is already in use
+  → Change backend port in .env file: PORT=5001
+  → For frontend: use PORT=3001 in terminal
 
 Error: "npm install failed"
-  → Internet connection check karo
-  → npm cache clean --force
-  → Phir se npm install
+  → Check internet connection
+  → Run: npm cache clean --force
+  → Then run npm install again
 
 Error: "Module not found"
-  → Correct folder mein ho (backend ya frontend)
-  → node_modules delete karo
-  → npm install phir se
+  → Make sure you're in correct folder (backend/frontend)
+  → Delete node_modules
+  → Run npm install again
 
 
 ================================================================================
@@ -131,39 +132,39 @@ DEVELOPMENT WORKFLOW
 ================================================================================
 
 Normal Use:
-  ✓ Terminal 1: Backend chal raha hai (npm start)
-  ✓ Terminal 2: Frontend chal raha hai (npm start)
+  ✓ Terminal 1: Backend running (npm start)
+  ✓ Terminal 2: Frontend running (npm start)
   ✓ Browser: http://localhost:3000
 
-Code Edit Karne Ke Baad:
-  ✓ Frontend: Auto-reload (save karo, browser update)
-  ✓ Backend: Restart karo (Ctrl+C, phir npm start)
+After Code Changes:
+  ✓ Frontend: Auto-reloads (just save file)
+  ✓ Backend: Restart (Ctrl+C, then npm start)
 
-Stop Karne Ke Liye:
-  ✓ Dono terminals mein Ctrl+C press karo
+To Stop:
+  ✓ Press Ctrl+C in both terminals
 
 
 ================================================================================
 FIRST TIME SETUP SUMMARY
 ================================================================================
 
-1. Node.js install karo (ek baar hi)
-2. START.bat run karo (ya manually npm install)
-3. Backend start karo: cd backend && npm start
-4. Frontend start karo: cd frontend && npm start (nayi terminal)
-5. Browser mein: http://localhost:3000
+1. Install Node.js (only once)
+2. Run START.bat (or manually run npm install)
+3. Start backend: cd backend && npm start
+4. Start frontend: cd frontend && npm start (new terminal)
+5. Open browser: http://localhost:3000
 
 
 ================================================================================
-HELP CHAHIYE?
+NEED HELP?
 ================================================================================
 
-Agar koi error aaye:
-  1. Error message ko full copy karo
-  2. Konsi step mein error aaya batao
-  3. Terminal output share karo
+If you face any error:
+  1. Copy the full error message
+  2. Mention which step caused the error
+  3. Share terminal output
 
-Python developer ho to bilkul easy hai! Node.js similar hi hai! 🚀
+If you're a Python developer, this will feel very easy! 🚀
 
 
 ================================================================================
@@ -171,12 +172,8 @@ FILES TO READ:
 ================================================================================
 
 - SETUP_GUIDE_HINDI.md - Detailed Hindi guide
-- INSTALL_NODEJS.md - Node.js install ka detailed guide
+- INSTALL_NODEJS.md - Detailed Node.js installation guide
 - README.md - Complete English documentation
 - QUICK_START.md - Quick reference
 
-
 ================================================================================
-
-
-

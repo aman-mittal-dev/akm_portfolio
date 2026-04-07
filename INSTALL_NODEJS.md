@@ -1,61 +1,58 @@
-# Node.js Install Karne Ka Guide
+# Guide to Installing Node.js
 
-## Step 1: Node.js Download Karein
+## Step 1: Download Node.js
 
-1. Website kholo: **https://nodejs.org/**
-2. **LTS version** download karein (left side - recommended)
-   - LTS = Long Term Support (stable version)
-3. `.msi` file download hogi (Windows ke liye)
+1. Open the website: **https://nodejs.org/**
+2. Download the **LTS version** (located on the left side – recommended)
+- LTS = Long Term Support (stable version)
+3. An `.msi` file will be downloaded (for Windows)
 
-## Step 2: Install Karein
+## Step 2: Install
 
-1. Downloaded file ko run karein
-2. **"Next"** button click karte jao
-3. **"I accept"** checkbox tick karo
-4. **Installation path** default rakho (change mat karo)
-5. **Important**: "Automatically install the necessary tools" checkbox **TICK KARO**
-6. **Install** button click karo
-7. Installation complete hone tak wait karein (2-3 minutes)
+1. Run the downloaded file
+2. Keep clicking the **"Next"** button
+3. Check the **"I accept"** checkbox
+4. Keep the **Installation path** at its default setting (do not change it)
+5. **Important**: **CHECK** the "Automatically install the necessary tools" checkbox
+6. Click the **Install** button
+7. Wait for the installation to complete (this may take 2-3 minutes)
 
 ## Step 3: Verify Installation
 
-1. **New Command Prompt/Terminal** kholo (install karke nayi kholein)
-2. Type karo:
+1. Open a **New Command Prompt/Terminal** (make sure to open a *new* one after installation)
+2. Type:
 ```bash
 node --version
 ```
-3. Agar version number dikhe (jaise `v20.10.0`), to successful! ✅
+3. If a version number appears (e.g., `v20.10.0`), it was successful! ✅
 
-4. Phir yeh bhi check karo:
+4. Next, check this as well:
 ```bash
 npm --version
 ```
-5. Agar version number dikhe (jaise `10.2.3`), to perfect! ✅
+5. If a version number appears (e.g., `10.2.3`), it's perfect! ✅
 
-## Step 4: Computer Restart (Optional but Recommended)
+## Step 4: Restart Computer (Optional but Recommended)
 
-Computer ko ek baar restart karo taaki sab properly setup ho jaye.
+Restart your computer once to ensure everything is set up properly.
 
 ## Done! 🎉
 
-Ab aap ready ho Node.js projects run karne ke liye!
+You are now ready to run Node.js projects!
 
 ---
 
 ## Troubleshooting
 
-### Agar "node command not found" aaye:
-- Computer restart karo
-- Nayi terminal kholo
-- Check karo ki Node.js properly install hua ya nahi
+### If you see "node command not found":
+- Restart your computer
+- Open a new terminal window
+- Verify whether Node.js was installed correctly
 
-### Agar version check mein kuch nahi aata:
-- Installation phir se karo
-- Administrator rights ke saath install karo
+### If nothing appears when checking the version:
+- Perform the installation again
+- Run the installation with Administrator rights
 
 ---
 
-**Note**: Node.js install karte waqt koi password ya admin rights mange, to allow karo.
-
-
-
+**Note**: If you are prompted for a password or administrator rights while installing Node.js, please grant permission.

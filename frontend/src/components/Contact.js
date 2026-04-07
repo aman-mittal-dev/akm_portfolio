@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiMail, FiPhone, FiMapPin, FiSend } from 'react-icons/fi';
-import axios from 'axios';
 import './Contact.css';
-
-const API_URL = process.env.REACT_APP_API_URL || "";
 
 const Contact = ({ about }) => {
   const [formData, setFormData] = useState({

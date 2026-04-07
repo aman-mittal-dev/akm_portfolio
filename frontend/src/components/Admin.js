@@ -5,8 +5,9 @@ import { FiSave, FiTrash2, FiPlus, FiLogOut, FiLock, FiEdit2, FiX } from 'react-
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import './Admin.css';
+import { API_BASE_URL } from '../config/api';
 
-const API_URL = process.env.REACT_APP_API_URL || "";
+const API_URL = API_BASE_URL;
 
 const Admin = ({ portfolioData, onUpdate }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);

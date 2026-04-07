@@ -4,10 +4,12 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { body, validationResult } = require('express-validator');
 
+const JWT_SECRET = process.env.JWT_SECRET || 'dev-jwt-secret-change-in-production';
+
 // Simple in-memory admin (In production, use a database)
 const ADMIN_USER = {
-  username: process.env.ADMIN_USERNAME,
-  password: process.env.ADMIN_PASSWORD
+  username: process.env.ADMIN_USERNAME || 'admin',
+  password: process.env.ADMIN_PASSWORD || 'Aman_Backend@123'
 };
 
 // Login endpoint
@@ -27,7 +29,7 @@ router.post('/login', [
     if (username === ADMIN_USER.username) {
       // Check password - if ADMIN_PASSWORD is set in env, use it directly for simplicity
       // In production, always hash passwords with bcrypt
-      const envPassword = process.env.ADMIN_PASSWORD;
+      const envPassword = ADMIN_USER.password;
       let isValidPassword = false;
       
       if (envPassword && envPassword.startsWith('$2a$')) {
@@ -41,7 +43,7 @@ router.post('/login', [
       if (isValidPassword) {
         const token = jwt.sign(
           { username: username, role: 'admin' },
-          process.env.JWT_SECRET,
+          JWT_SECRET,
           { expiresIn: '24h' }
         );
 
@@ -69,7 +71,7 @@ router.get('/verify', (req, res) => {
   }
 
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const decoded = jwt.verify(token, JWT_SECRET);
     res.json({ valid: true, user: decoded });
   } catch (error) {
     res.status(401).json({ message: 'Invalid token' });

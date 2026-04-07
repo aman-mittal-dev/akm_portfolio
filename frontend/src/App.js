@@ -9,8 +9,22 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Admin from './components/Admin';
 import Loading from './components/Loading';
+import { API_BASE_URL } from './config/api';
 
-const API_URL = process.env.REACT_APP_API_URL || "";
+const DEFAULT_PORTFOLIO_DATA = {
+  about: {
+    name: 'Aman Kumar Mittal',
+    title: 'Python Developer',
+    description: 'Passionate developer creating amazing web experiences',
+    email: 'aman.mittal.backend@gmail.com',
+    location: 'Your Location',
+    skills: [],
+    socialLinks: {},
+  },
+  skillDetails: {},
+  personalProjects: [],
+  companyProjects: [],
+};
 
 function App() {
   const [portfolioData, setPortfolioData] = useState(null);
@@ -40,12 +54,14 @@ function App() {
 
   const fetchPortfolioData = async () => {
     try {
-      const response = await axios.get(`${API_URL}/portfolio`);
+      const response = await axios.get(`${API_BASE_URL}/portfolio`, { timeout: 8000 });
       setPortfolioData(response.data);
+      setError(null);
       setLoading(false);
     } catch (err) {
       console.error('Error fetching portfolio:', err);
-      setError('Failed to load portfolio data');
+      setPortfolioData(DEFAULT_PORTFOLIO_DATA);
+      setError('Live data is unavailable right now. Showing default portfolio data.');
       setLoading(false);
     }
   };
@@ -54,19 +70,16 @@ function App() {
     return <Loading />;
   }
 
-  if (error) {
-    return (
-      <div className="error-container">
-        <h2>Error</h2>
-        <p>{error}</p>
-        <button onClick={fetchPortfolioData}>Retry</button>
-      </div>
-    );
-  }
-
   return (
     <Router>
       <div className="App">
+        {error && (
+          <div className="error-container">
+            <h2>Notice</h2>
+            <p>{error}</p>
+            <button onClick={fetchPortfolioData}>Retry</button>
+          </div>
+        )}
         <Navbar isDark={isDark} setIsDark={setIsDark} />
         <Routes>
           <Route 

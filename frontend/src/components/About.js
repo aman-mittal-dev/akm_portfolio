@@ -3,8 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FiMapPin, FiMail, FiCode, FiAward, FiX } from 'react-icons/fi';
 import axios from 'axios';
 import './About.css';
-
-const API_URL = process.env.REACT_APP_API_URL || "";
+import { API_BASE_URL } from '../config/api';
 
 const About = ({ about }) => {
   const skills = about?.skills || [];
@@ -18,7 +17,7 @@ const About = ({ about }) => {
 
   const fetchSkillDetails = async () => {
     try {
-      const response = await axios.get(`${API_URL}/portfolio/skills`);
+      const response = await axios.get(`${API_BASE_URL}/portfolio/skills`);
       setSkillDetails(response.data || {});
     } catch (error) {
       console.error('Error fetching skill details:', error);
@@ -39,7 +38,7 @@ const About = ({ about }) => {
           ? skillFromAPI.bestPractices
           : [
               'Follow industry best practices',
-              'Stay updated with latest versiohttps://www.linkedin.com/in/aman-kumar-mittal-4984561a0',
+              'Stay updated with latest versions',
               'Write clean, maintainable code',
               'Document your work properly',
               'Test thoroughly before deployment'
