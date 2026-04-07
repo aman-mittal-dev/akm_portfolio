@@ -45,7 +45,7 @@ app.use('/api', limiter);
 ====================== */
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || true, // same-domain in production
+    origin: process.env.FRONTEND_URL || false, // same-domain in production
     credentials: true,
   })
 );

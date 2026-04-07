@@ -1,0 +1,18 @@
+{
+  "about": {
+    "name": "Aman Kumar Mittal",
+    "title": "Python Developer",
+    "description": "Passionate developer with expertise in web technologies",
+    "email": "aman.mittal.backend@gmail.com",
+    "location": "Your Location",
+    "skills": ["JavaScript", "React", "Node.js", "Python"],
+    "socialLinks": {
+      "github": "https://github.com/yourusername",
+      "linkedin": "https://linkedin.com/in/yourusername",
+      "twitter": "https://twitter.com/yourusername"
+    }
+  },
+  "skillDetails": {},
+  "personalProjects": [],
+  "companyProjects": []
+}

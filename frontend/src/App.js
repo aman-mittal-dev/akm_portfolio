@@ -10,26 +10,11 @@ import Contact from './components/Contact';
 import Admin from './components/Admin';
 import Loading from './components/Loading';
 import { API_BASE_URL } from './config/api';
-
-const DEFAULT_PORTFOLIO_DATA = {
-  about: {
-    name: 'Aman Kumar Mittal',
-    title: 'Python Developer',
-    description: 'Passionate developer creating amazing web experiences',
-    email: 'aman.mittal.backend@gmail.com',
-    location: 'Your Location',
-    skills: [],
-    socialLinks: {},
-  },
-  skillDetails: {},
-  personalProjects: [],
-  companyProjects: [],
-};
+import portfolioFallbackData from './data/portfolioFallback.json';
 
 function App() {
   const [portfolioData, setPortfolioData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
   const [isDark, setIsDark] = useState(() => {
     // Load theme from localStorage or default to false
     const savedTheme = localStorage.getItem('theme');
@@ -56,12 +41,10 @@ function App() {
     try {
       const response = await axios.get(`${API_BASE_URL}/portfolio`, { timeout: 8000 });
       setPortfolioData(response.data);
-      setError(null);
       setLoading(false);
     } catch (err) {
       console.error('Error fetching portfolio:', err);
-      setPortfolioData(DEFAULT_PORTFOLIO_DATA);
-      setError('Live data is unavailable right now. Showing default portfolio data.');
+      setPortfolioData(portfolioFallbackData);
       setLoading(false);
     }
   };
@@ -73,13 +56,6 @@ function App() {
   return (
     <Router>
       <div className="App">
-        {error && (
-          <div className="error-container">
-            <h2>Notice</h2>
-            <p>{error}</p>
-            <button onClick={fetchPortfolioData}>Retry</button>
-          </div>
-        )}
         <Navbar isDark={isDark} setIsDark={setIsDark} />
         <Routes>
           <Route 

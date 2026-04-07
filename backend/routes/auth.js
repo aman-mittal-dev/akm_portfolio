@@ -4,12 +4,12 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { body, validationResult } = require('express-validator');
 
-const JWT_SECRET = process.env.JWT_SECRET || 'dev-jwt-secret-change-in-production';
+const JWT_SECRET = process.env.JWT_SECRET;
 
-// Simple in-memory admin (In production, use a database)
+// Login strictly uses .env credentials
 const ADMIN_USER = {
-  username: process.env.ADMIN_USERNAME || 'admin',
-  password: process.env.ADMIN_PASSWORD || 'Aman_Backend@123'
+  username: process.env.ADMIN_USERNAME,
+  password: process.env.ADMIN_PASSWORD
 };
 
 // Login endpoint
@@ -18,6 +18,12 @@ router.post('/login', [
   body('password').notEmpty().withMessage('Password is required'),
 ], async (req, res) => {
   try {
+    if (!JWT_SECRET || !ADMIN_USER.username || !ADMIN_USER.password) {
+      return res.status(500).json({
+        message: 'Server auth is not configured. Please set JWT_SECRET, ADMIN_USERNAME, and ADMIN_PASSWORD in backend/.env',
+      });
+    }
+
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
